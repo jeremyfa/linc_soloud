@@ -1,0 +1,57 @@
+<xml>
+
+    <files id="haxe">
+
+        <compilerflag value="-I${LINC_SOLOUD_PATH}lib/soloud/include/" />
+
+        <compilerflag value="-I${LINC_SOLOUD_PATH}linc/" />
+        <file name="${LINC_SOLOUD_PATH}linc/linc_soloud.cpp" />
+
+    </files>
+
+    <files id="soloud">
+
+        <section if="linc_sdl">
+            <compilerflag value="-I${LINC_SOLOUD_PATH}../linc_sdl/lib/sdl/include/" />
+            <compilerflag value="-DWITH_SDL2_STATIC=1" />
+            <file name="${LINC_SOLOUD_PATH}lib/soloud/src/backend/sdl2_static/soloud_sdl2_static.cpp" />
+        </section>
+
+        <compilerflag value="-I${LINC_SOLOUD_PATH}lib/soloud/include/" />
+
+        <file name="${LINC_SOLOUD_PATH}lib/soloud/src/core/soloud.cpp" />
+        <file name="${LINC_SOLOUD_PATH}lib/soloud/src/core/soloud_audiosource.cpp" />
+        <file name="${LINC_SOLOUD_PATH}lib/soloud/src/core/soloud_bus.cpp" />
+        <file name="${LINC_SOLOUD_PATH}lib/soloud/src/core/soloud_core_3d.cpp" />
+        <file name="${LINC_SOLOUD_PATH}lib/soloud/src/core/soloud_core_basicops.cpp" />
+        <file name="${LINC_SOLOUD_PATH}lib/soloud/src/core/soloud_core_faderops.cpp" />
+        <file name="${LINC_SOLOUD_PATH}lib/soloud/src/core/soloud_core_filterops.cpp" />
+        <file name="${LINC_SOLOUD_PATH}lib/soloud/src/core/soloud_core_getters.cpp" />
+        <file name="${LINC_SOLOUD_PATH}lib/soloud/src/core/soloud_core_setters.cpp" />
+        <file name="${LINC_SOLOUD_PATH}lib/soloud/src/core/soloud_core_voicegroup.cpp" />
+        <file name="${LINC_SOLOUD_PATH}lib/soloud/src/core/soloud_core_voiceops.cpp" />
+        <file name="${LINC_SOLOUD_PATH}lib/soloud/src/core/soloud_fader.cpp" />
+        <file name="${LINC_SOLOUD_PATH}lib/soloud/src/core/soloud_fft_lut.cpp" />
+        <file name="${LINC_SOLOUD_PATH}lib/soloud/src/core/soloud_fft.cpp" />
+        <file name="${LINC_SOLOUD_PATH}lib/soloud/src/core/soloud_file.cpp" />
+        <file name="${LINC_SOLOUD_PATH}lib/soloud/src/core/soloud_filter.cpp" />
+        <file name="${LINC_SOLOUD_PATH}lib/soloud/src/core/soloud_misc.cpp" />
+        <file name="${LINC_SOLOUD_PATH}lib/soloud/src/core/soloud_queue.cpp" />
+        <file name="${LINC_SOLOUD_PATH}lib/soloud/src/core/soloud_thread.cpp" />
+
+        <compilerflag value="-I${LINC_SOLOUD_PATH}lib/soloud/src/audiosource/wav/" />
+
+        <file name="${LINC_SOLOUD_PATH}lib/soloud/src/audiosource/wav/stb_vorbis.c" />
+        <file name="${LINC_SOLOUD_PATH}lib/soloud/src/audiosource/wav/dr_impl.cpp" />
+        <file name="${LINC_SOLOUD_PATH}lib/soloud/src/audiosource/wav/soloud_wav.cpp" />
+        <file name="${LINC_SOLOUD_PATH}lib/soloud/src/audiosource/wav/soloud_wavstream.cpp" />
+
+    </files>
+
+    <target id="haxe">
+
+        <files id="soloud" />
+
+    </target>
+
+</xml>
