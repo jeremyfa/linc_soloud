@@ -19,13 +19,13 @@ extern class Wav extends AudioSource {
 
     function load(aFilename:cpp.ConstCharStar):Soloud.Result;
 
-    function loadMem(aMem:cpp.Pointer<cpp.UInt8>, aLength:cpp.UInt32, aCopy:Bool = false, aTakeOwnership:Bool = true):Soloud.Result;
+    function loadMem(aMem:cpp.RawPointer<cpp.UInt8>, aLength:cpp.UInt32, aCopy:Bool = false, aTakeOwnership:Bool = true):Soloud.Result;
 
-    function loadRawWave8(aMem:cpp.Pointer<cpp.UInt8>, aLength:cpp.UInt32, aSamplerate:cpp.Float32 = 44100.0, aChannels:cpp.UInt32 = 1):Soloud.Result;
+    function loadRawWave8(aMem:cpp.RawPointer<cpp.UInt8>, aLength:cpp.UInt32, aSamplerate:cpp.Float32 = 44100.0, aChannels:cpp.UInt32 = 1):Soloud.Result;
 
-    function loadRawWave16(aMem:cpp.Pointer<cpp.UInt16>, aLength:cpp.UInt32, aSamplerate:cpp.Float32 = 44100.0, aChannels:cpp.UInt32 = 1):Soloud.Result;
+    function loadRawWave16(aMem:cpp.RawPointer<cpp.UInt16>, aLength:cpp.UInt32, aSamplerate:cpp.Float32 = 44100.0, aChannels:cpp.UInt32 = 1):Soloud.Result;
 
-    function loadRawWave(aMem:cpp.Pointer<cpp.Float32>, aLength:cpp.UInt32, aSamplerate:cpp.Float32 = 44100.0, aChannels:cpp.UInt32 = 1, aCopy:Bool = false, aTakeOwnership:Bool = true):Soloud.Result;
+    function loadRawWave(aMem:cpp.RawPointer<cpp.Float32>, aLength:cpp.UInt32, aSamplerate:cpp.Float32 = 44100.0, aChannels:cpp.UInt32 = 1, aCopy:Bool = false, aTakeOwnership:Bool = true):Soloud.Result;
 
     function getLength():Soloud.Time;
 
