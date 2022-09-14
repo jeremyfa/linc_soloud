@@ -11,10 +11,16 @@
 
     <files id="soloud">
 
-        <section if="linc_sdl">
+        <section if="linc_sdl" unless="soloud_no_sdl">
             <compilerflag value="-I${LINC_SOLOUD_PATH}../linc_sdl/lib/sdl/include/" />
             <compilerflag value="-DWITH_SDL2_STATIC=1" />
             <file name="${LINC_SOLOUD_PATH}lib/soloud/src/backend/sdl2_static/soloud_sdl2_static.cpp" />
+        </section>
+
+        <section unless="soloud_no_miniaudio">
+            <compilerflag value="-DWITH_MINIAUDIO=1" />
+            <file name="${LINC_SOLOUD_PATH}lib/soloud-miniaudio/soloud_miniaudio.cpp" unless="ios" />
+            <file name="${LINC_SOLOUD_PATH}lib/soloud-miniaudio/soloud_miniaudio.mm" if="ios" />
         </section>
 
         <compilerflag value="-I${LINC_SOLOUD_PATH}lib/soloud/include/" />

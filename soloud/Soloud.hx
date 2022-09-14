@@ -255,7 +255,7 @@ extern class Soloud {
     /**
      * Initialize SoLoud. Must be called before SoLoud can be used.
      */
-    function init():Result;
+    function init(flags:SoloudFlags = 0, backend:SoloudBackends = AUTO, samplerate:cpp.UInt32 = 0 /* AUTO */, bufferSize:cpp.UInt32 = 0 /* AUTO */, channels:cpp.UInt32 = 2):Result;
 
     /**
      * Deinitialize SoLoud. Must be called before shutting down.
