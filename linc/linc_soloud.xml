@@ -18,9 +18,10 @@
         </section>
 
         <section unless="soloud_no_miniaudio">
+            <compilerflag value="-fobjc-arc" if="ios || tvos" />
             <compilerflag value="-DWITH_MINIAUDIO=1" />
-            <file name="${LINC_SOLOUD_PATH}lib/soloud-miniaudio/soloud_miniaudio.cpp" unless="ios" />
-            <file name="${LINC_SOLOUD_PATH}lib/soloud-miniaudio/soloud_miniaudio.mm" if="ios" />
+            <file name="${LINC_SOLOUD_PATH}lib/soloud-miniaudio/soloud_miniaudio.cpp" unless="ios || tvos" />
+            <file name="${LINC_SOLOUD_PATH}lib/soloud-miniaudio/soloud_miniaudio.mm" if="ios || tvos" />
         </section>
 
         <compilerflag value="-I${LINC_SOLOUD_PATH}lib/soloud/include/" />

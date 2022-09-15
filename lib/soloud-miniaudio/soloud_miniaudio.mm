@@ -41,6 +41,9 @@ namespace SoLoud
 #define MA_NO_NULL
 #define MA_NO_DECODING
 #define MA_NO_ENCODING
+#ifdef __APPLE__
+    #define MA_NO_RUNTIME_LINKING
+#endif
 #include "miniaudio.h"
 #include <math.h>
 
@@ -62,7 +65,6 @@ namespace SoLoud
     result miniaudio_init(SoLoud::Soloud *aSoloud, unsigned int aFlags, unsigned int aSamplerate, unsigned int aBuffer, unsigned int aChannels)
     {
         ma_device_config config = ma_device_config_init(ma_device_type_playback);
-        //config.bufferSizeInFrames = 128;
         config.playback.format    = ma_format_f32;
         config.playback.channels  = aChannels;
         config.sampleRate         = aSamplerate;

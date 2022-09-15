@@ -33339,15 +33339,17 @@ static ma_result ma_context_init__coreaudio(ma_context* pContext, const ma_conte
             options |= AVAudioSessionCategoryOptionDefaultToSpeaker;
         #endif
 
-            if ([pAudioSession setCategory: AVAudioSessionCategoryPlayAndRecord withOptions:options error:nil]) {
-                /* Using PlayAndRecord */
-            } else if ([pAudioSession setCategory: AVAudioSessionCategoryPlayback withOptions:options error:nil]) {
-                /* Using Playback */
-            } else if ([pAudioSession setCategory: AVAudioSessionCategoryRecord withOptions:options error:nil]) {
-                /* Using Record */
-            } else {
+            // if ([pAudioSession setCategory: AVAudioSessionCategoryAmbient withOptions:options error:nil]) {
+            //     /* Using Ambient */
+            // } else if ([pAudioSession setCategory: AVAudioSessionCategoryPlayAndRecord withOptions:options error:nil]) {
+            //     /* Using PlayAndRecord */
+            // } else if ([pAudioSession setCategory: AVAudioSessionCategoryPlayback withOptions:options error:nil]) {
+            //     /* Using Playback */
+            // } else if ([pAudioSession setCategory: AVAudioSessionCategoryRecord withOptions:options error:nil]) {
+            //     /* Using Record */
+            // } else {
                 /* Leave as default? */
-            }
+            // }
         } else {
             if (pConfig->coreaudio.sessionCategory != ma_ios_session_category_none) {
             #if defined(__IPHONE_12_0)
