@@ -2,7 +2,7 @@
 
 [Soloud](https://sol.gfxile.net/soloud/) bindings for Haxe C++ target
 
-Currently tested with [linc_sdl](https://github.com/ceramic-engine/linc_sdl), but could be configured to work with other backends.
+Currently tested with [clay](https://github.com/ceramic-engine/clay), but could be configured to work with other backends.
 
 ```haxe
 // Declare some variables
