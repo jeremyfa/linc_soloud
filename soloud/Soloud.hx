@@ -252,6 +252,17 @@ extern class Soloud {
         untyped __cpp__('delete {0}', this);
     }
 
+    @:native("::linc::soloud::createFilterFunction")
+    function createFilterFunction(
+        id:Int,
+        creatFunc:cpp.Callable<(filterId:Int, instanceId:Int)->Void>,
+        destroyFunc:cpp.Callable<(filterId:Int, instanceId:Int)->Void>,
+        filterFunc:cpp.Callable<(filterId:Int, instanceId:Int, aSamples:cpp.UInt32, aBufferSize:cpp.UInt32, aChannels:cpp.UInt32, aSamplerate:cpp.Float32, time:cpp.Float64)->Void>
+    ):Filter;
+
+    @:native("::linc::soloud::destroyFilterFunction")
+    function destroyFilterFunction(id:Int):Void;
+
     /**
      * Initialize SoLoud. Must be called before SoLoud can be used.
      */

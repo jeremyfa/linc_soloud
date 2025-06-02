@@ -23,7 +23,7 @@ enum abstract FilterParamType(cpp.UInt32) from cpp.UInt32 to cpp.UInt32 {
 }
 
 /**
- * Base class for audio sources
+ * Base class for filter instances
  */
 @:native("SoLoud::FilterInstance*")
 extern class FilterInstance {
