@@ -22,10 +22,10 @@ namespace linc {
             hx::SetTopOfStack((int *)0, true);
         }
 
-        void FunctionFilterInstance::filter(float *aBuffer, unsigned int aSamples, unsigned int aBufferSize, unsigned int aChannels, float aSamplerate, double aTime) {
+        void FunctionFilterInstance::filter(float *aBuffer, unsigned int aSamples, unsigned int aChannels, float aSamplerate, double aTime) {
             int haxe_stack_ = 99;
             hx::SetTopOfStack(&haxe_stack_, true);
-            mFilterFunc(mFilterId, mInstanceId, aBuffer, aSamples, aBufferSize, aChannels, aSamplerate, aTime);
+            mFilterFunc(mFilterId, mInstanceId, aBuffer, aSamples, aChannels, aSamplerate, aTime);
             hx::SetTopOfStack((int *)0, true);
         }
 

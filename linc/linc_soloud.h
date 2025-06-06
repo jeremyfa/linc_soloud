@@ -18,7 +18,7 @@ namespace linc {
 
         typedef ::cpp::Function < void(int filterId, int instanceId) > SoloudDestroyFilterInstanceFunction;
 
-        typedef ::cpp::Function < void(int filterId, int instanceId, float *aBuffer, unsigned int aSamples, unsigned int aBufferSize, unsigned int aChannels, float aSamplerate, SoLoud::time aTime) > SoloudFilterFunction;
+        typedef ::cpp::Function < void(int filterId, int instanceId, float *aBuffer, unsigned int aSamples, unsigned int aChannels, float aSamplerate, SoLoud::time aTime) > SoloudFilterFunction;
 
         class FunctionFilter;
 
@@ -29,7 +29,7 @@ namespace linc {
             SoloudFilterFunction mFilterFunc;
             SoloudDestroyFilterInstanceFunction mDestroyFunc;
         public:
-            virtual void filter(float *aBuffer, unsigned int aSamples, unsigned int aBufferSize, unsigned int aChannels, float aSamplerate, SoLoud::time aTime);
+            virtual void filter(float *aBuffer, unsigned int aSamples, unsigned int aChannels, float aSamplerate, SoLoud::time aTime);
             virtual ~FunctionFilterInstance();
             FunctionFilterInstance(int filterId, int instanceId, SoloudFilterFunction filterFunc, SoloudDestroyFilterInstanceFunction destroyFunc);
         };
