@@ -2,6 +2,7 @@
 #include <hxcpp.h>
 #include "./linc_soloud.h"
 
+#include <mutex>
 #include <unordered_map>
 
 namespace linc {
