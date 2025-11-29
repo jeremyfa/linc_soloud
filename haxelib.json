@@ -1,0 +1,11 @@
+{
+  "name": "linc_soloud",
+  "url": "https://github.com/jeremyfa/linc_soloud",
+  "license": "MIT",
+  "tags": ["linc", "cpp", "native", "audio", "soloud"],
+  "description": "Soloud audio engine bindings for Haxe C++ target",
+  "version": "1.0.0",
+  "releasenote": "",
+  "contributors": ["jeremyfa"],
+  "dependencies": {}
+}
