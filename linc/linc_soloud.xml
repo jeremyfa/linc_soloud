@@ -19,9 +19,7 @@
             </section>
         </section>
 
-        <!-- TODO: soloud with clay+SDL3? -->
-
-        <section unless="soloud_no_miniaudio">
+        <section unless="soloud_custom_backend">
             <compilerflag value="-fobjc-arc" if="ios || tvos" />
             <compilerflag value="-DWITH_MINIAUDIO=1" />
             <file name="${LINC_SOLOUD_PATH}lib/soloud-miniaudio/soloud_miniaudio.cpp" unless="ios || tvos" />
